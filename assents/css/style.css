@@ -1,0 +1,311 @@
+/* Estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+/* Navegação */
+nav {
+    padding: 1rem;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 2rem;
+    width: 2rem;
+    margin-left: auto;
+}
+
+.nav-toggle-bar {
+    background: rgb(27, 27, 27); /* Cor das barras do menu hamburguer */
+    height: 3px;
+    width: 25px;
+    margin: 3px 0;
+    border-radius: 8px;
+}
+
+.nav-menu {
+    display: none; /* Esconde o menu por padrão */
+    position: absolute;
+    top: 4rem;
+    right: 2rem;
+    background: rgb(240, 170, 8);
+    border-radius: 8px;
+    flex-direction: column;
+    width: 180px; /* Largura ajustada */
+    list-style: none;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para o menu */
+}
+
+.nav-menu.active {
+    display: flex;
+    align-content: stretch;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+.nav-menu li {
+    margin: 0.5rem 0; /* Margem reduzida */
+}
+
+.nav-menu a {
+    color: rgb(31, 20, 11); /* Cor do texto */
+    text-decoration: none;
+    font-size: 1.1rem; /* Tamanho da fonte ajustado */
+    padding: 0.5rem; /* Preenchimento adicionado */
+    border-radius: 4px; /* Adiciona cantos arredondados */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Transição suave para hover */
+}
+
+.nav-menu a:hover {
+    color: rgb(231, 226, 223); /* Cor do texto ao passar o mouse */
+    background-color: rgb(151, 112, 6); /* Fundo ao passar o mouse */
+    width: 100%; /* Preenche o campo */
+    display: block; /* Preenche o campo */
+}
+
+/* Estilos para telas pequenas */
+@media (max-width: 768px) {
+    .nav-menu {
+        top: 3rem; /* Ajuste conforme necessário */
+        right: 1rem;
+    }
+}
+
+/* Hero */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    padding-top: 4rem;
+    padding-inline: 1.5rem;
+    background: linear-gradient(269deg, rgba(240, 170, 8, 0.75) 0%, rgba(139, 12, 12, 0.85) 100%);
+    text-align: center;
+    color: rgb(24, 23, 23);
+}
+
+.hero__left,
+.hero__right {
+    flex: 1;
+}
+
+.hero__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-right: 2rem;
+}
+
+.hero__left h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    background: linear-gradient(269deg, rgba(30, 27, 182, 0.75), rgba(182, 20, 20, 0.85)); /* Gradiente de cor inicial */
+    background-size: 200% 200%; /* Tamanho do background para animação */
+    -webkit-background-clip: text; /* Recorte de fundo para texto no Webkit */
+    -webkit-text-fill-color: transparent; /* Preenchimento de texto transparente no Webkit */
+    animation: gradientMove 3s ease infinite; /* Animação de movimento */
+}
+
+.hero__left p {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    background: linear-gradient(128deg, rgba(12, 8, 10, 0.75), rgb(49, 21, 8)); /* Gradiente de cor inicial */
+    background-size: 200% 200%; /* Tamanho do background para animação */
+    -webkit-background-clip: text; /* Recorte de fundo para texto no Webkit */
+    -webkit-text-fill-color: transparent; /* Preenchimento de texto transparente no Webkit */
+    animation: gradientMove 3s ease infinite; /* Animação de movimento */
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.hero__right {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.dog {
+    position: relative; /* Alterado para `absolute` para movimentação livre */
+    width: 30rem; /* Ajuste o tamanho conforme necessário */
+}
+
+/* Imagens de animação */
+.img {
+    position: absolute;
+    width: 10rem; /* Ajuste conforme necessário */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Transição suave para efeitos de hover */
+}
+
+@keyframes moveUpDown {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes fly {
+    0% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-20px) translateX(15px); }
+    100% { transform: translateY(0) translateX(0); }
+}
+
+@keyframes blink {
+    0%, 50%, 100% { filter: brightness(1.2); } /* Brilho ao piscar */
+    25%, 75% { filter: brightness(1); } /* Normal */
+}
+
+/* Animação contínua para o pássaro */
+.img2 {
+    animation: fly 5s infinite; /* Animação contínua de voo para o pássaro */
+}
+
+/* Animação de piscar para o gato */
+.img1 {
+    animation: blink 1.5s infinite; /* Animação contínua de piscar para o gato */
+}
+
+/* Efeito ao passar o mouse */
+.img:hover, .dog:hover {
+    filter: brightness(1.2); /* Aumenta o brilho da imagem ao passar o mouse */
+}
+
+/* Estilos específicos para as imagens */
+.img1 {
+    bottom: 0;
+    left: -1rem;
+}
+
+.img2 {
+    top: 1rem;
+    right: 0;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+    .hero__left h1 {
+        font-size: 3rem;
+    }
+    
+    .hero__left p {
+        font-size: 1.5rem;
+    }
+
+    .dog {
+        width: 30rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero__left {
+        padding-right: 0;
+        padding-bottom: 2rem;
+    }
+
+    .hero__left h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero__left p {
+        font-size: 1.25rem;
+    }
+
+    .dog {
+        width: 25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero__left h1 {
+        font-size: 2rem;
+    }
+    
+    .hero__left p {
+        font-size: 1rem;
+    }
+
+    .dog {
+        width: 20rem;
+    }
+
+    .img {
+        width: 8rem;
+    }
+
+    .img1 {
+        bottom: 0;
+        left: 1rem;
+    }
+
+    .img2 {
+        top: 2rem;
+        right: 0;
+    }
+}
+
+/* Estilos da Barra de Rolagem */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(240, 170, 8, 0.75);
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(31, 30, 30);
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(31, 30, 30);
+}
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(12, 8, 10, 0.75) rgb(254 186 64);
+}
