@@ -166,13 +166,13 @@ nav {
 }
 
 .dog {
-    position: relative; /* Alterado para `absolute` para movimentação livre */
-    width: 30rem; /* Ajuste o tamanho conforme necessário */
+     width: 30rem; /* Ajuste o tamanho conforme necessário */
 }
 
 /* Imagens de animação */
 .img {
     position: absolute;
+    display: flex;
     width: 10rem; /* Ajuste conforme necessário */
     transition: transform 0.3s ease, filter 0.3s ease; /* Transição suave para efeitos de hover */
 }
