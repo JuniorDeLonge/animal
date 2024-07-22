@@ -9,6 +9,7 @@
 html, body {
     height: 100%;
     width: 100%;
+    background: linear-gradient(269deg, rgb(240, 170, 8) 0%, rgb(245 181 67) 100%);
 }
 
 /* Navegação */
@@ -51,7 +52,7 @@ nav {
     position: absolute;
     top: 4rem;
     right: 2rem;
-    background: rgb(240, 170, 8);
+    background: rgb(235, 180, 54);
     border-radius: 8px;
     flex-direction: column;
     width: 180px; /* Largura ajustada */
@@ -105,7 +106,7 @@ nav {
     max-width: 100%;
     padding-top: 4rem;
     padding-inline: 1.5rem;
-    background: linear-gradient(269deg, rgba(240, 170, 8, 0.75) 0%, rgba(139, 12, 12, 0.85) 100%);
+    background: linear-gradient(269deg, rgb(240, 170, 8) 0%, rgb(245 181 67) 100%);
     text-align: center;
     color: rgb(24, 23, 23);
 }
@@ -142,9 +143,11 @@ nav {
     background-size: 200% 200%; /* Tamanho do background para animação */
     -webkit-background-clip: text; /* Recorte de fundo para texto no Webkit */
     -webkit-text-fill-color: transparent; /* Preenchimento de texto transparente no Webkit */
-    animation: gradientMove 3s ease infinite; /* Animação de movimento */
+    animation: gradientMove 6s ease infinite; /* Animação de movimento */
 }
 
+ 
+ 
 @keyframes gradientMove {
     0% {
         background-position: 0% 50%;
@@ -166,7 +169,8 @@ nav {
 }
 
 .dog {
-     width: 30rem; /* Ajuste o tamanho conforme necessário */
+    position: relative; /* Alterado para `absolute` para movimentação livre */
+    width: 30rem; /* Ajuste o tamanho conforme necessário */
 }
 
 /* Imagens de animação */
@@ -200,12 +204,12 @@ nav {
 }
 
 /* Animação de piscar para o gato */
-.img1 {
-    animation: blink 1.5s infinite; /* Animação contínua de piscar para o gato */
+.img1, .dog {
+    animation: blink 5s infinite; /* Animação contínua de piscar para o gato */
 }
 
 /* Efeito ao passar o mouse */
-.img:hover, .dog:hover {
+.img:hover  {
     filter: brightness(1.2); /* Aumenta o brilho da imagem ao passar o mouse */
 }
 
@@ -307,5 +311,7 @@ nav {
 
 html {
     scrollbar-width: thin;
-    scrollbar-color: rgba(12, 8, 10, 0.75) rgb(254 186 64);
+    scrollbar-color: rgb(41, 40, 39) rgb(240, 160, 21)  ;
+
+     
 }
