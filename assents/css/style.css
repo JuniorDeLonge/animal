@@ -6,8 +6,7 @@
     font-family: system-ui;
 }
 
-html, body {
-    height: 100%;
+body {
     width: 100%;
     background: linear-gradient(269deg, rgb(240, 170, 8) 0%, rgb(245 181 67) 100%);
 }
@@ -19,12 +18,6 @@ nav {
     width: 100%;
     top: 0;
     z-index: 1000;
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .nav-toggle {
@@ -40,7 +33,7 @@ nav {
 }
 
 .nav-toggle-bar {
-    background: rgb(27, 27, 27); /* Cor das barras do menu hamburguer */
+    background: rgb(27, 27, 27);
     height: 3px;
     width: 25px;
     margin: 3px 0;
@@ -48,17 +41,17 @@ nav {
 }
 
 .nav-menu {
-    display: none; /* Esconde o menu por padrão */
+    display: none;
     position: absolute;
     top: 4rem;
     right: 2rem;
     background: rgb(235, 180, 54);
     border-radius: 8px;
     flex-direction: column;
-    width: 180px; /* Largura ajustada */
+    width: 180px;
     list-style: none;
     padding: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para o menu */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .nav-menu.active {
@@ -70,29 +63,29 @@ nav {
     align-items: stretch;
 }
 .nav-menu li {
-    margin: 0.5rem 0; /* Margem reduzida */
+    margin: 0.5rem 0;
 }
 
 .nav-menu a {
-    color: rgb(31, 20, 11); /* Cor do texto */
+    color: rgb(31, 20, 11);
     text-decoration: none;
-    font-size: 1.1rem; /* Tamanho da fonte ajustado */
-    padding: 0.5rem; /* Preenchimento adicionado */
-    border-radius: 4px; /* Adiciona cantos arredondados */
-    transition: color 0.3s ease, background-color 0.3s ease; /* Transição suave para hover */
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .nav-menu a:hover {
-    color: rgb(231, 226, 223); /* Cor do texto ao passar o mouse */
-    background-color: rgb(151, 112, 6); /* Fundo ao passar o mouse */
-    width: 100%; /* Preenche o campo */
-    display: block; /* Preenche o campo */
+    color: rgb(231, 226, 223);
+    background-color: rgb(151, 112, 6);
+    width: 100%;
+    display: block;
 }
 
 /* Estilos para telas pequenas */
 @media (max-width: 768px) {
     .nav-menu {
-        top: 3rem; /* Ajuste conforme necessário */
+        top: 3rem;
         right: 1rem;
     }
 }
@@ -128,26 +121,24 @@ nav {
     font-size: 4rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    background: linear-gradient(269deg, rgba(30, 27, 182, 0.75), rgba(182, 20, 20, 0.85)); /* Gradiente de cor inicial */
-    background-size: 200% 200%; /* Tamanho do background para animação */
-    -webkit-background-clip: text; /* Recorte de fundo para texto no Webkit */
-    -webkit-text-fill-color: transparent; /* Preenchimento de texto transparente no Webkit */
-    animation: gradientMove 3s ease infinite; /* Animação de movimento */
+    background: linear-gradient(269deg, rgba(30, 27, 182, 0.75), rgba(182, 20, 20, 0.85));
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 3s ease infinite;
 }
 
 .hero__left p {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    background: linear-gradient(128deg, rgba(12, 8, 10, 0.75), rgb(49, 21, 8)); /* Gradiente de cor inicial */
-    background-size: 200% 200%; /* Tamanho do background para animação */
-    -webkit-background-clip: text; /* Recorte de fundo para texto no Webkit */
-    -webkit-text-fill-color: transparent; /* Preenchimento de texto transparente no Webkit */
-    animation: gradientMove 6s ease infinite; /* Animação de movimento */
+    background: linear-gradient(128deg, rgba(12, 8, 10, 0.75), rgb(49, 21, 8));
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 6s ease infinite;
 }
 
- 
- 
 @keyframes gradientMove {
     0% {
         background-position: 0% 50%;
@@ -169,22 +160,15 @@ nav {
 }
 
 .dog {
-    position: relative; /* Alterado para `absolute` para movimentação livre */
-    width: 30rem; /* Ajuste o tamanho conforme necessário */
+    position: relative;
+    width: 30rem;
 }
 
-/* Imagens de animação */
 .img {
     position: absolute;
     display: flex;
-    width: 10rem; /* Ajuste conforme necessário */
-    transition: transform 0.3s ease, filter 0.3s ease; /* Transição suave para efeitos de hover */
-}
-
-@keyframes moveUpDown {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
+    width: 10rem;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 @keyframes fly {
@@ -194,26 +178,22 @@ nav {
 }
 
 @keyframes blink {
-    0%, 50%, 100% { filter: brightness(1.2); } /* Brilho ao piscar */
-    25%, 75% { filter: brightness(1); } /* Normal */
+    0%, 50%, 100% { filter: brightness(1.2); }
+    25%, 75% { filter: brightness(1); }
 }
 
-/* Animação contínua para o pássaro */
 .img2 {
-    animation: fly 5s infinite; /* Animação contínua de voo para o pássaro */
+    animation: fly 5s infinite;
 }
 
-/* Animação de piscar para o gato */
 .img1, .dog {
-    animation: blink 5s infinite; /* Animação contínua de piscar para o gato */
+    animation: blink 5s infinite;
 }
 
-/* Efeito ao passar o mouse */
-.img:hover  {
-    filter: brightness(1.2); /* Aumenta o brilho da imagem ao passar o mouse */
+.img:hover {
+    filter: brightness(1.2);
 }
 
-/* Estilos específicos para as imagens */
 .img1 {
     bottom: 0;
     left: -1rem;
@@ -224,12 +204,126 @@ nav {
     right: 0;
 }
 
+/* Seção Sobre */
+.about {
+    padding: 2rem 1.5rem;
+    background: white;
+    text-align: center;
+    color: rgb(24, 23, 23);
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.about p {
+    font-size: 1.5rem;
+}
+
+/* Seção Produtos */
+.products {
+    padding: 2rem 1.5rem;
+    background: #f7f7f7;
+    text-align: center;
+    color: rgb(24, 23, 23);
+}
+
+.products h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.product-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.product-item {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1;
+    max-width: 300px;
+}
+
+.product-item img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.product-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-item p {
+    font-size: 1rem;
+    color: rgb(80, 80, 80);
+}
+
+/* Seção Contato */
+.contact {
+    padding: 2rem 1.5rem;
+    background: white;
+    text-align: center;
+    color: rgb(24, 23, 23);
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.contact button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background: rgb(235, 180, 54);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact button:hover {
+    background: rgb(200, 150, 50);
+}
+
 /* Media Queries for Responsive Design */
 @media (max-width: 1200px) {
     .hero__left h1 {
         font-size: 3rem;
     }
-    
+
     .hero__left p {
         font-size: 1.5rem;
     }
@@ -252,7 +346,7 @@ nav {
     .hero__left h1 {
         font-size: 2.5rem;
     }
-    
+
     .hero__left p {
         font-size: 1.25rem;
     }
@@ -266,7 +360,7 @@ nav {
     .hero__left h1 {
         font-size: 2rem;
     }
-    
+
     .hero__left p {
         font-size: 1rem;
     }
@@ -311,7 +405,117 @@ nav {
 
 html {
     scrollbar-width: thin;
-    scrollbar-color: rgb(41, 40, 39) rgb(240, 160, 21)  ;
+    scrollbar-color: rgb(41, 40, 39) rgb(240, 160, 21);
+}
 
-     
+
+/* Contact Section */
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 2rem 1.5rem;
+}
+
+.contact-image {
+    flex: 1;
+    text-align: center;
+}
+
+.contact-image img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.contact-form {
+    flex: 1;
+    padding: 1.5rem;
+    background: #f3f3f3;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    padding: 0.75rem 1.5rem;
+    background: rgb(31, 30, 30);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: rgb(235, 180, 54);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+    }
+
+    .contact-image {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Footer */
+.footer {
+    background: rgb(31, 30, 30);
+    color: white;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.footer p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.social-icon {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: rgb(235, 180, 54);
 }
