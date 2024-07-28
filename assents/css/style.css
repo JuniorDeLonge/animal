@@ -8,7 +8,7 @@
 
 body {
     width: 100%;
-    background: linear-gradient(269deg, rgb(240, 170, 8) 0%, rgb(245 181 67) 100%);
+    background: linear-gradient(269deg, rgb(89 33 179) 0%, rgb(187 65 195) 100%);
 }
 
 /* Navegação */
@@ -99,7 +99,7 @@ nav {
     max-width: 100%;
     padding-top: 4rem;
     padding-inline: 1.5rem;
-    background: linear-gradient(269deg, rgb(240, 170, 8) 0%, rgb(245 181 67) 100%);
+    background:linear-gradient(269deg, rgb(89 33 179) 0%, rgb(187 65 195) 100%);
     text-align: center;
     color: rgb(24, 23, 23);
 }
@@ -221,10 +221,10 @@ nav {
     font-size: 1.5rem;
 }
 
-/* Seção Produtos */
+/* Produtos */
 .products {
     padding: 2rem 1.5rem;
-    background: #f7f7f7;
+    background: #d3eba4;
     text-align: center;
     color: rgb(24, 23, 23);
 }
@@ -236,36 +236,83 @@ nav {
 
 .product-list {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
+    justify-content: center; /* Centraliza os itens */
+    gap: 1.5rem; /* Espaçamento entre os itens */
 }
 
 .product-item {
     background: white;
     border-radius: 8px;
-    padding: 1rem;
+    padding: 1.5rem;
     margin: 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    flex: 1;
-    max-width: 300px;
+    flex: 1 1 calc(33% - 3rem); /* Define a largura dos itens para 1/3 menos a margem */
+    max-width: calc(33% - 3rem); /* Define a largura máxima dos itens para 1/3 menos a margem */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .product-item img {
     max-width: 100%;
     border-radius: 8px;
     margin-bottom: 1rem;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.product-item img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
 }
 
 .product-item h3 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     margin-bottom: 0.5rem;
+    color: rgb(31, 30, 30);
 }
 
 .product-item p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: rgb(80, 80, 80);
+    margin-bottom: 1rem;
 }
+
+.buy-button {
+    padding: 0.75rem 1.5rem;
+    background: rgb(31, 30, 30);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.buy-button:hover {
+    background: rgb(235, 180, 54);
+    transform: scale(1.05);
+}
+
+/* Media Queries para Disposição Responsiva */
+@media (max-width: 768px) {
+    .product-item {
+        flex: 1 1 calc(50% - 2rem); /* Define a largura dos itens para 1/2 menos a margem em telas menores */
+        max-width: calc(50% - 2rem); /* Define a largura máxima dos itens para 1/2 menos a margem em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-item {
+        flex: 1 1 100%; /* Define a largura dos itens para 100% em telas muito pequenas */
+        max-width: 100%; /* Define a largura máxima dos itens para 100% em telas muito pequenas */
+    }
+}
+
+
 
 /* Seção Contato */
 .contact {
@@ -384,138 +431,135 @@ nav {
     }
 }
 
-/* Estilos da Barra de Rolagem */
-::-webkit-scrollbar {
-    width: 10px;
-}
 
-::-webkit-scrollbar-track {
-    background: rgba(240, 170, 8, 0.75);
-    border-radius: 8px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: rgb(31, 30, 30);
-    border-radius: 8px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: rgb(31, 30, 30);
-}
 
 html {
     scrollbar-width: thin;
-    scrollbar-color: rgb(41, 40, 39) rgb(240, 160, 21);
+ }
+
+
+/* Contact */
+.contact {
+    padding: 4rem 2rem;
+    background: rgb(245, 245, 245);
+    color: rgb(31, 30, 30);
 }
 
-
-/* Contact Section */
 .contact-content {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    padding: 2rem 1.5rem;
+    justify-content: space-between;
 }
 
 .contact-image {
     flex: 1;
-    text-align: center;
+    margin-right: 2rem;
 }
 
 .contact-image img {
     width: 100%;
-    max-width: 600px;
     height: auto;
     border-radius: 8px;
 }
 
 .contact-form {
     flex: 1;
-    padding: 1.5rem;
-    background: #f3f3f3;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .contact-form h2 {
-    margin-bottom: 1rem;
     font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
 .contact-form label {
-    display: block;
+    font-size: 1rem;
     margin-bottom: 0.5rem;
-    font-weight: bold;
+    display: block;
 }
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 0.5rem;
+    padding: 0.75rem;
     margin-bottom: 1rem;
-    border: 1px solid #ddd;
+    border: 1px solid rgb(200, 200, 200);
     border-radius: 4px;
 }
 
 .contact-form button {
-    padding: 0.75rem 1.5rem;
-    background: rgb(31, 30, 30);
+    background: rgb(240, 170, 8);
     color: white;
     border: none;
+    padding: 0.75rem 1.5rem;
     border-radius: 4px;
     cursor: pointer;
     transition: background 0.3s ease;
 }
 
 .contact-form button:hover {
-    background: rgb(235, 180, 54);
+    background: rgb(245, 181, 67);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .contact-content {
         flex-direction: column;
     }
 
     .contact-image {
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
+        margin-right: 0;
     }
 }
+
 
 /* Footer */
 .footer {
     background: rgb(31, 30, 30);
     color: white;
-    text-align: center;
     padding: 2rem 1.5rem;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-.footer h3 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.footer p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-}
-
-.social-icons {
     display: flex;
-    justify-content: center;
-    margin-bottom: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-left {
+    text-align: left;
+}
+
+.footer-left h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-left p {
+    font-size: 1rem;
+}
+
+.footer-right {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
 }
 
 .social-icon {
     color: white;
     font-size: 1.5rem;
-    margin: 0 0.5rem;
     transition: color 0.3s ease;
 }
 
 .social-icon:hover {
     color: rgb(235, 180, 54);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-right {
+        margin-top: 1rem;
+    }
 }
