@@ -99,7 +99,7 @@ nav {
     max-width: 100%;
     padding-top: 4rem;
     padding-inline: 1.5rem;
-    background:linear-gradient(269deg, rgb(89 33 179) 0%, rgb(187 65 195) 100%);
+    background:linear-gradient(269deg, rgb(67 6 165) 0%, rgb(148 18 157) 100%);
     text-align: center;
     color: rgb(24, 23, 23);
 }
@@ -121,7 +121,7 @@ nav {
     font-size: 4rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    background: linear-gradient(269deg, rgba(30, 27, 182, 0.75), rgba(182, 20, 20, 0.85));
+    background: rgb(252 60 255);
     background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -132,7 +132,7 @@ nav {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 1rem;
-    background: linear-gradient(128deg, rgba(12, 8, 10, 0.75), rgb(49, 21, 8));
+    background: #e9e3e3;
     background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -230,8 +230,12 @@ nav {
 }
 
 .products h2 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     margin-bottom: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 1.3rem;
 }
 
 .product-list {
@@ -255,7 +259,7 @@ nav {
 
 .product-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px  rgb(182, 211, 125) ; 
 }
 
 .product-item img {
